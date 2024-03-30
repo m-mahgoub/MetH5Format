@@ -55,7 +55,7 @@ def read_readgroups(readgroups_file: IO):
         raise ValueError(f"Invalid number of columns in read groups file (should be 2, was {len(read_groups.columns)})")
     
     if not all([col in read_groups.columns for col in should_colnames]):
-        raise ValueError("Invalid column names in read groups file (should be %s)" % should_colnames.join(", "))
+        raise ValueError("Invalid column names in read groups file (should be %s)" % ", ".join(should_colnames))
     
     return read_groups
 
